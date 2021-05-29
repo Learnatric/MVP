@@ -79,14 +79,14 @@ namespace Lean.Web.Startup
 
             ConfigureExternalAuthProviders();
 
-            IocManager.Register<IViewRenderService, ViewRenderService>();
-            IocManager.Register<IEmailBodyRenderer, EmailBodyRenderer>();
-            IocManager.IocContainer.Register(
-              Castle.MicroKernel.Registration.Component.For<ISiteRootProvider>()
-             .ImplementedBy<SiteRootProvider>()
-             .DependsOn(Castle.MicroKernel.Registration.Dependency.OnValue("siteRoot", _appConfiguration["App:ClientRootAddress"]))
-             .LifestyleTransient()
-            );
+            //IocManager.Register<IViewRenderService, ViewRenderService>();
+            //IocManager.Register<IEmailBodyRenderer, EmailBodyRenderer>();
+            //IocManager.IocContainer.Register(
+            //  Castle.MicroKernel.Registration.Component.For<ISiteRootProvider>()
+            // .ImplementedBy<SiteRootProvider>()
+            // .DependsOn(Castle.MicroKernel.Registration.Dependency.OnValue("siteRoot", _appConfiguration["App:ClientRootAddress"]))
+            // .LifestyleTransient()
+            //);
         }
 
         private void ConfigureExternalAuthProviders()
