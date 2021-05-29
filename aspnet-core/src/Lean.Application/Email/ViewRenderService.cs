@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Abp.Dependency;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -17,7 +18,7 @@ namespace Lean.Email
     /// <summary>
     /// Borrowed from https://long2know.com/2017/08/rendering-and-emailing-embedded-razor-views-with-net-core/
     /// </summary>
-    public class ViewRenderService : IViewRenderService
+    public class ViewRenderService : IViewRenderService,ITransientDependency
     {
         private readonly IRazorViewEngine _viewEngine;
         private readonly ITempDataProvider _tempDataProvider;
