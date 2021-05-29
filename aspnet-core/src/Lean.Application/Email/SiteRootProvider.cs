@@ -1,22 +1,21 @@
-﻿using Abp.Dependency;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lean.Email
 {
-    public class SiteRootProvider : ISiteRootProvider,ITransientDependency
+    public class SiteRootProvider : ISiteRootProvider
     {
         string _siteRoot;
-        public SiteRootProvider()
+        public SiteRootProvider(string siteRoot)
         {
-            //_siteRoot = siteRoot;
+            _siteRoot = siteRoot;
         }
 
         public string GetSiteRoot()
         {
-            return "http://localhost:4200/";
+            return _siteRoot;
         }
     }
 }

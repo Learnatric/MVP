@@ -1,12 +1,11 @@
-﻿using Abp.Dependency;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Lean.Email
 {
-    public class EmailBodyRenderer : IEmailBodyRenderer,ITransientDependency
+    public class EmailBodyRenderer : IEmailBodyRenderer
     {
         readonly IViewRenderService _viewRenderService;
 
